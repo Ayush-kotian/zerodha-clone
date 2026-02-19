@@ -1,5 +1,6 @@
 import React from "react";
 import "../index.css";
+import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <nav
@@ -7,9 +8,9 @@ function Navbar() {
       style={{ color: "white", height: "4rem" }}
     >
       <div class="container-fluid">
-        <a class="navbar-brand" href="#" style={{ padding: "4rem" }}>
+        <Link class="navbar-brand" href="#" style={{ padding: "4rem" }} to="/">
           <img src="media\images\logo.svg" style={{ width: "30%" }} />
-        </a>
+        </Link>
         <button
           class="navbar-toggler"
           type="button"
@@ -29,29 +30,29 @@ function Navbar() {
           <form class="ms-auto" role="search">
             <ul class="navbar-nav ">
               <li class="nav-item" style={{ paddingRight: "2rem" }}>
-                <a class="nav-link active " aria-current="page" href="#">
+                <Link class="nav-link active " aria-current="page" to="/signup">
                   Signup
-                </a>
+                </Link>
               </li>
               <li class="nav-item" style={{ paddingRight: "2rem" }}>
-                <a class="nav-link active" aria-current="page" href="#">
+                <Link class="nav-link active" aria-current="page" to="/about">
                   About
-                </a>
+                </Link>
               </li>
               <li class="nav-item" style={{ paddingRight: "2rem" }}>
-                <a class="nav-link active" aria-current="page" href="#">
+                <Link class="nav-link active" aria-current="page" to="/product">
                   Products
-                </a>
+                </Link>
               </li>
               <li class="nav-item " style={{ paddingRight: "2rem" }}>
-                <a class="nav-link active" aria-current="page" href="#">
+                <Link class="nav-link active" aria-current="page" to="/pricing">
                   Pricing
-                </a>
+                </Link>
               </li>
               <li class="nav-item" style={{ paddingRight: "2rem" }}>
-                <a class="nav-link active" aria-current="page" href="#">
+                <Link class="nav-link active" aria-current="page" to="/support">
                   Support
-                </a>
+                </Link>
               </li>
             </ul>
           </form>
