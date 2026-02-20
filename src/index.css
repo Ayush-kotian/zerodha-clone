@@ -44,3 +44,18 @@ code {
    text-align:center;
    color:gray;
   }
+  .about-p p{
+    font-size:1.35rem;
+    line-height:2.1rem;
+    padding:0.25rem;
+    font-weight:450;
+  }
+  .left-about-p p{
+    padding-right:10rem;
+  }
+  .team-p p{
+   font-size:1.23rem;
+  }
+  .team-p p a{
+   text-decoration:none;
+  }
