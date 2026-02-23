@@ -2,7 +2,7 @@ import React from "react";
 import "../index.css";
 function Footer() {
   return (
-    <footer className="border-top  mt-5" style={{ background: "#F5F5F5" }}>
+    <footer className="border-top  mt-5 p-2" style={{ background: "#F5F5F5" }}>
       <div className="container-fluid mt-5">
         <div className="row text-center mt-5">
           <div className="col">
@@ -77,13 +77,13 @@ function Footer() {
         <div
           className="row footer-end text-muted mt-5"
           style={{
-            paddingLeft: "10rem",
-            paddingRight: "10rem",
             fontSize: "1rem",
-            lineHeight: "2rem",
+            // lineHeight: "2rem",
+            paddingRight:"6rem",
+            paddingLeft:"6rem"
           }}
         >
-          <p>
+          <p style={{textAlign:"justify",}}>
             Zerodha Broking Ltd.: Member of NSE​ &​ BSE – SEBI Registration no.:
             INZ000031633 CDSL: Depository services through Zerodha Securities
             Pvt. Ltd. – SEBI Registration no.: IN-DP-100-2015 Commodity Trading
@@ -97,7 +97,7 @@ function Footer() {
             by SEBI | ICF
           </p>
 
-          <p className="mt-2">
+          <p className="mt-2" style={{textAlign:"justify",}}>
             Procedure to file a complaint on SEBI SCORES: Register on SCORES
             portal. Mandatory details for filing complaints on SCORES: Name,
             PAN, Address, Mobile Number, E-mail ID. Benefits: Effective
@@ -106,7 +106,7 @@ function Footer() {
             documents carefully before investing.
           </p>
 
-          <p className="mt-2 mb-5">
+          <p className="mt-2 mb-5" style={{textAlign:"justify",}}>
             "Prevent unauthorised transactions in your account. Update your
             mobile numbers/email IDs with your stock brokers. Receive
             information of your transactions directly from Exchange on your
