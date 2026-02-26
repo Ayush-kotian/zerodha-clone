@@ -25,7 +25,7 @@ function Navbar() {
         <div
           class="collapse navbar-collapse"
           id="navbarSupportedContent"
-          style={{ padding: "20rem" }}
+          style={{ padding: "0rem" }}
         >
           <form class="ms-auto" role="search">
             <ul class="navbar-nav ">

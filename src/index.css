@@ -59,4 +59,23 @@ code {
   .team-p p a{
    text-decoration:none;
   }
-
+ #supportHero{
+ background-color:rgb(56, 126, 209);
+ color:white;
+ }
+.supportWrapper{
+  display:flex;
+  justify-content:space-between;
+}
+.supportWrapper h4{
+  padding:2rem 9rem;
+  margin-left:10rem;
+  font-weight:400; 
+}
+#supportHero input{
+  padding: 1rem;
+  border-radius:6px;
+  border:none;
+  width:57%;
+  font-size:16px;
+} 
