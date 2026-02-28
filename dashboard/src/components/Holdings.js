@@ -17,6 +17,7 @@ const Holdings = () => {
             <th>Net chg.</th>
             <th>Day chg.</th>
           </tr>
+
         </table>
       </div>
 
