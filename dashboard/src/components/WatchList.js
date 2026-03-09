@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 import { watchlist } from "../data/data";
-import { Tooltip, Grow } from "@mui/material";
-import {
-  KeyboardArrowUp,
-  KeyboardArrowDown,
-  BarChartOutlined,
-  MoreHoriz,
-} from "@mui/icons-material";
-import BarChartIcon from "@mui/icons-material/BarChart";
+import {Tooltip,Grow} from "@mui/material";
+import {KeyboardArrowUp,KeyboardArrowDown, BarChartOutlined, MoreHoriz} from "@mui/icons-material";
+import BarChartIcon from '@mui/icons-material/BarChart';
+import GeneralContext from "./GeneralContext";
 const WatchList = () => {
   return (
     <div className="watchlist-container">
@@ -31,69 +27,50 @@ const WatchList = () => {
   );
 };
 export default WatchList;
-
-let WatchListItem = ({ stock }) => {
-  const [showWatchlistAction, setshowWatchlistAction] = useState(false);
-  const handleMouseEnter = () => {
-    setshowWatchlistAction(true);
+let WatchListItem=({stock})=>{
+const [showWatchlistAction,setshowWatchlistAction]=useState(false);
+const handleMouseEnter=()=>{
+setshowWatchlistAction(true);
+}
+const handleMouseLeave=()=>{
+setshowWatchlistAction(false);
+}
+return(
+  <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+   <div className="item">
+    <p className={stock.isDown ? "down" :"up"}>{stock.name}</p>
+    <div className="itemInfo">
+      <span className="percent">{stock.percent}</span>
+      <span className={stock.isDown ? "down" :"up"} style={{padding:"0.5em"}}>{stock.isDown? (<KeyboardArrowDown/>) : (<KeyboardArrowUp/>) }</span>
+      <span className="price">{stock.price}</span>
+    </div>
+   </div>
+   {showWatchlistAction && <WatchListAction uid={stock.name}/>}
+  </li>
+)
+}
+const WatchListAction=({uid})=>{
+   const handleBuyClick = () => {
+    const generalContext = useContext(GeneralContext);
+    generalContext.openBuyWindow(uid);
   };
-  const handleMouseLeave = () => {
-    setshowWatchlistAction(false);
-  };
-  return (
-    <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      <div className="item">
-        <p className={stock.isDown ? "down" : "up"}>{stock.name}</p>
-        <div className="itemInfo">
-          <span className="percent">{stock.percent}</span>
-          <span
-            className={stock.isDown ? "down" : "up"}
-            style={{ padding: "0.5em" }}
-          >
-            {stock.isDown ? <KeyboardArrowDown /> : <KeyboardArrowUp />}
-          </span>
-          <span className="price">{stock.price}</span>
-        </div>
-      </div>
-      {showWatchlistAction  && <WatchListAction uid={stock.name} />}
-    </li>
-  );
-}; 
-const WatchListAction = ({ uid }) => {
-  return (
+  return(
     <div className="actions">
       <span className="tooltip">
-        <Tooltip
-          title="Buy (B)"
-          placement="top"
-          arrow
-          TransitionComponent={Grow}
-        >
-          <button className="buy">Buy</button>
-        </Tooltip>
-        <Tooltip
-          title="Sell (S)"
-          placement="top"
-          arrow
-          TransitionComponent={Grow}
-        >
-          <button className="sell">Sell</button>
-        </Tooltip>
-        <Tooltip
-          title="Analytics (A)"
-          placement="top"
-          arrow
-          TransitionComponent={Grow}
-        >
-          <button className="action">
-            <BarChartOutlined fontSize="small" />
-          </button>
-        </Tooltip>
-        <Tooltip title="More" placement="top" arrow TransitionComponent={Grow}>
-          <button className="action">
-            <MoreHoriz fontSize="small" />
-          </button>
-        </Tooltip>
+           <Tooltip title="Buy (B)" placement="top" arrow TransitionComponent={Grow} >
+        <button className="buy" onClick={handleBuyClick}>
+          Buy
+        </button>
+      </Tooltip>
+       <Tooltip title="Sell (S)" placement="top" arrow TransitionComponent={Grow} >
+        <button className="sell">Sell</button>
+      </Tooltip>
+        <Tooltip title="Analytics (A)" placement="top" arrow TransitionComponent={Grow} >
+        <button className="action"><BarChartOutlined fontSize="small"/></button>
+      </Tooltip>
+      <Tooltip title="More" placement="top" arrow TransitionComponent={Grow} >
+        <button className="action"><MoreHoriz fontSize="small"/></button>
+      </Tooltip>
       </span>
     </div>
   );

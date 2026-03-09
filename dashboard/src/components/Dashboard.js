@@ -9,12 +9,17 @@ import Orders from "./Orders";
 import Positions from "./Positions";
 import Summary from "./Summary";
 import WatchList from "./WatchList";
+<<<<<<< HEAD
+=======
+import { GeneralContextProvider } from "./GeneralContext";
+
+>>>>>>> order-branch-backend
 const Dashboard = () => {
   return (
     <div className="dashboard-container">
-      {/* <GeneralContextProvider> */}
+      <GeneralContextProvider>
         <WatchList />
-      {/* </GeneralContextProvider> */}
+      </GeneralContextProvider>
       <div className="content">
         <Routes>
           <Route exact path="/" element={<Summary />} />
