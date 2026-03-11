@@ -9,8 +9,7 @@ const Holdings = () => {
 axios.get("http://localhost:3002/allHoldings")
 .then((res)=>{
   setallHoldings(res.data);
-})
-
+});
 },[]);
   return (
     <>
@@ -37,7 +36,7 @@ axios.get("http://localhost:3002/allHoldings")
             <tr>
               <td>{stock.name}</td>
               <td>{stock.qty}</td>
-              <td>{stock.avg.toFixed(2)}</td>
+              <td>{stock.avg}</td>
               <td>{stock.price}</td>
               <td>{CurrValue.toFixed(2)}</td>
               <td className={profClass}>{(CurrValue-stock.avg*stock.qty).toFixed(2)}</td>
@@ -69,5 +68,4 @@ axios.get("http://localhost:3002/allHoldings")
     </>
   );
 };
-
 export default Holdings;
