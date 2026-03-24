@@ -11,10 +11,10 @@ function LeftSection({
   return (
     <div className="container mt-5">
       <div className="row text-center">
-        <div className="col mt-4">
-          <img src={imageURL} width="100%" />
+        <div className="col-lg col-12 mt-4">
+          <img src={imageURL} width="100%" className="img-fluid" />
         </div>
-        <div className="col mt-5" style={{ marginLeft: "25%" }}>
+        <div className="col-lg col-12 mt-5 left-section-copy">
           <h1 style={{ textAlign: "justify" }}>{productName}</h1>
           <p
             className="text-muted mt-4 mb-4 "
@@ -42,14 +42,14 @@ function LeftSection({
               style={{ textDecoration: "none", marginRight: "1rem" }}
               target="_blank"
             >
-              <img src="media/images/googlePlayBadge.svg" />
+              <img src="media/images/googlePlayBadge.svg" className="img-fluid" />
             </a>
             <a
               href={appStore}
               style={{ textDecoration: "none" }}
               target="_blank"
             >
-              <img src="media/images/appstoreBadge.svg" />
+              <img src="media/images/appstoreBadge.svg" className="img-fluid" />
             </a>
           </div>
         </div>

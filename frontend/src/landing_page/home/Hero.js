@@ -3,13 +3,13 @@ function Hero() {
   return (
     <div className="container p-5">
       <div className="row text-center mb-5">
-        <img src="media\images\homeHero.png" alt="homeHero" className="mb-5" />
+        <img src="media\images\homeHero.png" alt="homeHero" className="mb-5 img-fluid" />
         <h1 className="mt-5">Invest in everything</h1>
         <p className="mt-2">
           Online platform to invest in stocks,derivatives,mutual funds,and more
         </p>
         <button
-          className="btn btn-primary fs-5 mt-3"
+          className="btn btn-primary fs-5 mt-3 responsive-cta-btn"
           style={{
             width: "20%",
             margin: "auto",

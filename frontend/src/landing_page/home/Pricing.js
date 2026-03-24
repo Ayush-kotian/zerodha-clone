@@ -3,7 +3,7 @@ function Pricing() {
   return (
     <div className="container mt-5 mb-5">
       <div className="row p-5">
-        <div className="col-4 ">
+        <div className="col-lg-4 col-12 ">
           <h1>Unbeatable pricing</h1>
           <p>
             {" "}
@@ -15,8 +15,8 @@ function Pricing() {
             <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
           </a>
         </div>
-        <div className="col-2 "></div>
-        <div className="col-6 ">
+        <div className="col-lg-2 d-none d-lg-block "></div>
+        <div className="col-lg-6 col-12 ">
           <div className="container">
             <div className="row">
               <div className="col border" style={{ padding: "1rem 3rem" }}>

@@ -3,12 +3,12 @@ function Stats() {
   return (
     <div className="container p-5">
       <div className="row mt-5">
-        <div className="col-6 p-5">
+        <div className="col-lg-6 col-12 p-5">
           <h1 className="fs-2 mb-5">Trust with confidence</h1>
           <h2 className="fs-4">Customer-first always</h2>
           <p className="text-muted">
             {" "}
-            That's why 1.3+ crore customers trust Zerodha with ₹3.5+ lakh crores
+            That's why 1.3+ crore customers trust Zerodha with â‚¹3.5+ lakh crores
             worth of equity investments
           </p>
           <h2 className="fs-4">No spam or gimmicks</h2>
@@ -28,11 +28,12 @@ function Stats() {
             money.
           </p>
         </div>
-        <div className="col-6 p-5">
+        <div className="col-lg-6 col-12 p-5">
           <img
             src="media\images\ecosystem.png"
             alt="largestBroker"
             style={{ width: "90%" }}
+            className="img-fluid"
           />
           <div className="text-center mt-2">
             <a href="" className="mx-5" style={{ textDecoration: "none" }}>

@@ -3,10 +3,10 @@ function Education() {
   return (
     <div className="container mt-5 p-5">
       <div className="row p-2">
-        <div className="col-6">
-          <img src="media/images/education.svg" style={{ width: "70%" }} />
+        <div className="col-lg-6 col-12">
+          <img src="media/images/education.svg" style={{ width: "70%" }} className="img-fluid" />
         </div>
-        <div className="col-6">
+        <div className="col-lg-6 col-12">
           <h1 className="fs-2 mb-4">Free and open market education</h1>
           <p className="mb-3">
             Varsity, the largest online stock market education book in the world

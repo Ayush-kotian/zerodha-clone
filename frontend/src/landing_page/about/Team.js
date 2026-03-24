@@ -8,19 +8,18 @@ function Team() {
         <h1 className="text-center mb-5">People</h1>
       </div>
       <div className="row mt-5">
-        <div className="col-5">
+        <div className="col-lg-5 col-12">
           <div>
             <img
               src="media\images\myphoto.jpeg"
-              style={{ borderRadius: "50%", height: "20rem", width: "20rem" }}
+              className="team-photo"
             />
-            <div className="mt-4" style={{ marginLeft: "6.8rem" }}>
+            <div className="mt-4 team-name-wrap">
               <h3 style={{ color: "gray" }}>Ayush</h3>
             </div>
             <div>
               <p
-                style={{ marginLeft: "5rem", fontSize: "1.2rem" }}
-                className="text-muted"
+                className="team-role text-muted"
               >
                 Full-Stack Developer
               </p>
@@ -28,7 +27,7 @@ function Team() {
           </div>
         </div>
         <div
-          className="team-p col-7 mt-3 text-muted "
+          className="team-p col-lg-7 col-12 mt-3 text-muted "
           style={{ marginRight: "0rem" }}
         >
           <p>

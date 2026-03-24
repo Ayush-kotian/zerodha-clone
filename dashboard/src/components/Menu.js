@@ -1,19 +1,34 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+
 const Menu = () => {
   let [selectedMenu, setSelectedMenu] = useState(0);
   let [isProfileDropdownOpen,setIsProfileDropdownOpen]=useState(false);
+  const { user, logout } = useAuth();
   let handleMenuClick = (index) => {
     setSelectedMenu(index);
   };
-    let handleProfileClick = () => {
+  let handleProfileClick = () => {
     setIsProfileDropdownOpen(!isProfileDropdownOpen);
   };
+  const handleLogoutClick = async () => {
+    setIsProfileDropdownOpen(false);
+    await logout();
+  };
+  const initials = user?.name
+    ? user.name
+        .split(" ")
+        .map((part) => part[0])
+        .join("")
+        .slice(0, 2)
+        .toUpperCase()
+    : "ZU";
   const menuClass = "menu";
   const activeMenuClass = "menu selected";
   return (
     <div className="menu-container">
-      <img src="logo.png" style={{ width: "35px" }} />
+      <img src="logo.png" alt="Zerodha clone logo" style={{ width: "35px" }} />
       <div className="menus">
         <ul>
           <li>
@@ -73,7 +88,7 @@ const Menu = () => {
           </li>
           <li>
               <Link
-              to="/holdings"
+              to="/apps"
               onClick={() => {handleMenuClick(5)}}
               style={{ textDecoration: "none" }}
             >
@@ -84,9 +99,20 @@ const Menu = () => {
           </li>
         </ul>
         <hr />
-        <div className="profile" onClick={handleProfileClick}>
-          <div className="avatar">ZU</div>
-          <p className="username">USERID</p>
+        <div className="profile-wrapper">
+          <div className="profile" onClick={handleProfileClick}>
+            <div className="avatar">{initials}</div>
+            <p className="username">{user?.name || "User"}</p>
+          </div>
+          {isProfileDropdownOpen && (
+            <div className="profile-dropdown">
+              <p className="dropdown-name">{user?.name || "User"}</p>
+              <p className="dropdown-email">{user?.email || "No email found"}</p>
+              <button type="button" className="logout-btn" onClick={handleLogoutClick}>
+                Logout
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>

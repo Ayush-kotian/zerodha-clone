@@ -5,11 +5,11 @@ function OpenAccount() {
       <div className="row text-center mb-5">
         <h1 className="mt-5">Open a Zerodha Account</h1>
         <p className="mt-2">
-          Modern platforms and apps, ₹0 investments, and flat ₹20 intraday and
+          Modern platforms and apps, â‚¹0 investments, and flat â‚¹20 intraday and
           F&O trades.
         </p>
         <button
-          className="btn btn-primary fs-5 mt-3"
+          className="btn btn-primary fs-5 mt-3 responsive-cta-btn"
           style={{
             width: "20%",
             margin: "auto",

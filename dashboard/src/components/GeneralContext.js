@@ -45,6 +45,8 @@ const GeneralContext = React.createContext({
   closeBuyWindow: () => {},
   openSellWindow: (uid) => {},
   closeSellWindow: () => {},
+  refreshTradingData: () => {},
+  refreshKey: 0,
 });
 
 export const GeneralContextProvider = (props) => {
@@ -52,6 +54,8 @@ export const GeneralContextProvider = (props) => {
   const [isBuyOpen, setIsBuyOpen] = useState(false);
   const [isSellOpen, setIsSellOpen] = useState(false);
   const [selectedStock, setSelectedStock] = useState("");
+  const [selectedSellPrice, setSelectedSellPrice] = useState(0);
+  const [refreshKey, setRefreshKey] = useState(0);
 
   const openBuyWindow = (uid) => {
     setSelectedStock(uid);
@@ -62,13 +66,18 @@ export const GeneralContextProvider = (props) => {
     setIsBuyOpen(false);
   };
 
-  const openSellWindow = (uid) => {
+  const openSellWindow = (uid, price = 0) => {
     setSelectedStock(uid);
+    setSelectedSellPrice(price);
     setIsSellOpen(true);
   };
 
   const closeSellWindow = () => {
     setIsSellOpen(false);
+  };
+
+  const refreshTradingData = () => {
+    setRefreshKey((currentKey) => currentKey + 1);
   };
 
   return (
@@ -77,13 +86,15 @@ export const GeneralContextProvider = (props) => {
         openBuyWindow,
         closeBuyWindow,
         openSellWindow,
-        closeSellWindow
+        closeSellWindow,
+        refreshTradingData,
+        refreshKey
       }}
     >
       {props.children}
 
       {isBuyOpen && <BuyWindow uid={selectedStock} />}
-      {isSellOpen && <SellWindow uid={selectedStock} />}
+      {isSellOpen && <SellWindow uid={selectedStock} initialPrice={selectedSellPrice} />}
 
     </GeneralContext.Provider>
   );

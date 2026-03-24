@@ -2,26 +2,25 @@ import React from "react";
 import "../index.css";
 function Footer() {
   return (
-    <footer className="border-top  mt-5 p-2" style={{ background: "#F5F5F5" }}>
-      <div className="container-fluid mt-5">
-        <div className="row text-center mt-5">
-          <div className="col">
-            <img src="media\images\logo.svg" style={{ width: "30%" }} />
-            <p className="mt-4" style={{ fontSize: "1.2rem" }}>
+    <footer className="border-top mt-5 p-2 footer-shell" style={{ background: "#F5F5F5" }}>
+      <div className="container-fluid mt-5 footer-container">
+        <div className="row text-center mt-5 footer-top-row">
+          <div className="col-lg col-md-6 col-12 mb-4 footer-brand-column">
+            <img src="media\images\logo.svg" alt="Zerodha clone logo" className="footer-logo" />
+            <p className="mt-4 footer-brand-copy" style={{ fontSize: "1.2rem" }}>
               &copy; 2010-2024,Not Zerodha Broking Ltd. <br />
               All rights are reserved
-              {/* <div className='icons-demo'> */}
               <br />
-              <span className="icons-demo">
-                <i class="fa-brands fa-twitter"></i>
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-linkedin-in"></i>
-                <i class="fa-brands fa-telegram"></i>
+              <span className="icons-demo footer-icons">
+                <i className="fa-brands fa-twitter"></i>
+                <i className="fa-brands fa-facebook"></i>
+                <i className="fa-brands fa-instagram"></i>
+                <i className="fa-brands fa-linkedin-in"></i>
+                <i className="fa-brands fa-telegram"></i>
               </span>
             </p>
           </div>
-          <div className="foot-a col">
+          <div className="foot-a col-lg col-md-4 col-4 mb-4 footer-link-column">
             <p href="">Company</p>
             <a href="">About</a>
             <br />
@@ -43,7 +42,7 @@ function Footer() {
             <br />
             <a href="">Zerodha cares(CSR)</a>
           </div>
-          <div className="foot-a col">
+          <div className="foot-a col-lg col-md-4 col-4 mb-4 footer-link-column">
             <p>Support</p>
             <a href="">Contact</a>
             <br />
@@ -61,7 +60,7 @@ function Footer() {
             <br />
             <br />
           </div>
-          <div className="foot-a col">
+          <div className="foot-a col-lg col-md-4 col-4 mb-4 footer-link-column">
             <p>Account</p>
             <a href="">Open an account</a>
             <br />
@@ -75,10 +74,9 @@ function Footer() {
           </div>
         </div>
         <div
-          className="row footer-end text-muted mt-5"
+          className="row footer-end text-muted mt-5 footer-end-row"
           style={{
             fontSize: "1rem",
-            // lineHeight: "2rem",
             paddingRight:"6rem",
             paddingLeft:"6rem"
           }}

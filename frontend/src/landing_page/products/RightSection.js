@@ -3,7 +3,7 @@ function RightSection({ imageURL, productName, productDescription,learnMore}) {
   return (
     <div className="container" style={{marginTop:"8rem",marginBottom:""}}>
       <div className="row text-center g-5" style={{marginTop:"",marginBottom:""}}>
-        <div className="col-5 " style={{marginTop:"6.7rem"}}>
+        <div className="col-lg-5 col-12 right-section-copy">
           <h1 style={{ textAlign: "justify" }}>{productName}</h1>
           <p
             className="text-muted  mt-4 mb-4"
@@ -22,9 +22,9 @@ function RightSection({ imageURL, productName, productDescription,learnMore}) {
             </a>
           </div>
         </div>
-        <div className="col-2"></div>
-        <div className="col mt-5">
-          <img src={imageURL} width="100%" height="100%"/>
+        <div className="col-lg-2 d-none d-lg-block"></div>
+        <div className="col-lg col-12 mt-5">
+          <img src={imageURL} width="100%" height="100%" className="img-fluid"/>
         </div>
       </div>
     </div>
